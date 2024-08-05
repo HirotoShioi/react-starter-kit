@@ -1,10 +1,15 @@
-export default function Index() {
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { pageWrapperStyles } from "@/styles/common";
+import { Link } from "react-router-dom";
+
+export default function IndexPage() {
   return (
-    <p id="zero-state">
-      This is a demo for React Router.
-      <br />
-      Check out{" "}
-      <a href="https://reactrouter.com">the docs at reactrouter.com</a>.
-    </p>
+    <div className={cn(pageWrapperStyles, "max-w-3xl space-y-8")}>
+      <h1 className="text-2xl font-bold">My App</h1>
+      <Button size={"lg"} asChild>
+        <Link to="/sign-in">Sign in</Link>
+      </Button>
+    </div>
   );
 }
