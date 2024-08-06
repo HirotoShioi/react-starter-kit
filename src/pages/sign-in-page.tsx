@@ -11,17 +11,18 @@ import { translations } from "@aws-amplify/ui-react";
 import { I18n } from "aws-amplify/utils";
 import { pageWrapperStyles } from "@/styles/common";
 import { useEffect } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const dynamic = "force-dynamic";
 
 export default function SignInPage() {
   const { user } = useAuthenticator((c) => [c.user]);
+  const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      redirect("/todos");
+      navigate("/todos");
     }
-  });
+  }, [navigate, user]);
 
   const { tokens } = useTheme();
   I18n.putVocabularies(translations);

@@ -8,7 +8,7 @@ import {
 import { Menu } from "lucide-react";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import { AuthUser, signOut } from "aws-amplify/auth";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function HeaderMenuItem({
   href,
@@ -24,12 +24,13 @@ export function HeaderMenuItem({
   );
 }
 export function SignOutItem({ user }: { user: AuthUser | null }) {
+  const navigate = useNavigate();
   if (!user) {
     return null;
   }
   return (
     <DropdownMenuItem
-      onClick={() => signOut().then(() => redirect("/"))}
+      onClick={() => signOut().then(() => navigate("/"))}
       className="cursor-pointer"
     >
       Sign Out

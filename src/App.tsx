@@ -14,7 +14,6 @@ import { getCurrentUser } from "aws-amplify/auth";
 
 async function protectedRoute<T>(loader: () => Promise<T>) {
   const user = await getCurrentUser().catch(() => null);
-  console.log("user", user);
   if (user === null) {
     return redirect("/sign-in");
   }
