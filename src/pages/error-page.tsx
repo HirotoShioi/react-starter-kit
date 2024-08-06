@@ -1,4 +1,3 @@
-import Header from "@/components/header";
 import { pageWrapperStyles } from "@/styles/common";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -11,7 +10,6 @@ export default function ErrorPage() {
 
   return (
     <div id="error-page">
-      <Header />
       <div className={cn(pageWrapperStyles, "space-y-4")}>
         <h1 className="text-2xl">Oops!</h1>
         <div>
