@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter backend dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
