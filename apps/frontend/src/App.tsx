@@ -15,6 +15,7 @@ import TodosPage, {
 } from "@/pages/todos-page";
 import { getCurrentUser } from "aws-amplify/auth";
 import { NFTPage } from "./pages/nft-page";
+import NotFoundPage from "./pages/not-found-page";
 
 async function protectedRoute<T>(loader?: () => Promise<T>) {
   const user = await getCurrentUser().catch(() => null);
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
             },
             element: <NFTPage />,
           },
-          { path: "*", element: <ErrorPage /> },
+          { path: "*", element: <NotFoundPage /> },
         ],
       },
     ],

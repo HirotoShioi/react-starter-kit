@@ -6,7 +6,9 @@ import { cn } from "@/lib/utils";
 
 export default function ErrorPage() {
   const error = useRouteError() as Error;
-  console.error(error);
+  if (error) {
+    console.error(error);
+  }
 
   return (
     <div id="error-page">
